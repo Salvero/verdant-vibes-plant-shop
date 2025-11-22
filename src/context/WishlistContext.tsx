@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
-import type { Product } from '../types';
 
 interface WishlistContextType {
     wishlist: string[]; // Array of product IDs
