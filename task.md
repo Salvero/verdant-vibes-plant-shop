@@ -1,4 +1,4 @@
-# Task List: Verdant Vibes Plant Shop
+# Task List: Growhaus Plant Shop
 
 - [x] **Phase 1: Setup & Foundation** <!-- id: 0 -->
     - [x] Initialize Vite project (React + TS) <!-- id: 1 -->

@@ -10,7 +10,7 @@ export const Navbar: React.FC = () => {
         <nav className="navbar">
             <div className="container navbar-container">
                 <Link to="/" className="navbar-logo">
-                    Verdant Vibes
+                    Growhaus
                 </Link>
 
                 <div className="navbar-links">
