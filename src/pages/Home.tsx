@@ -3,9 +3,11 @@ import { ArrowRight, Star } from 'lucide-react';
 import { Button } from '../components/Button';
 import { products } from '../data/products';
 import { Link } from 'react-router-dom';
+import { useWishlist } from '../context/WishlistContext';
 
 export const Home: React.FC = () => {
     const featuredProducts = products.slice(0, 3);
+    const { isInWishlist, toggleWishlist } = useWishlist();
 
     return (
         <div className="home-page">
@@ -68,7 +70,15 @@ export const Home: React.FC = () => {
                         <Link to={`/product/${product.id}`} key={product.id} className="product-card">
                             <div className="product-image-wrapper">
                                 <img src={product.image} alt={product.name} className="product-image" />
-                                <button className="wishlist-btn" onClick={(e) => e.preventDefault()}><Star size={18} /></button>
+                                <button
+                                    className={`wishlist-btn ${isInWishlist(product.id) ? 'active' : ''}`}
+                                    onClick={(e) => {
+                                        e.preventDefault();
+                                        toggleWishlist(product.id);
+                                    }}
+                                >
+                                    <Star size={18} fill={isInWishlist(product.id) ? "currentColor" : "none"} />
+                                </button>
                             </div>
                             <div className="product-info">
                                 <p className="product-scientific">{product.scientificName}</p>

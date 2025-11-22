@@ -1,21 +1,28 @@
 import React, { useState, useMemo } from 'react';
 import { products } from '../data/products';
 import { Button } from '../components/Button';
-import { Star, Filter, X } from 'lucide-react';
+import { Star, Filter, X, Search } from 'lucide-react';
 import { Link } from 'react-router-dom';
+
+import { useWishlist } from '../context/WishlistContext';
 
 export const Shop: React.FC = () => {
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
     const [selectedLight, setSelectedLight] = useState<string | null>(null);
+    const [searchQuery, setSearchQuery] = useState('');
     const [isFilterOpen, setIsFilterOpen] = useState(false);
+
+    const { isInWishlist, toggleWishlist } = useWishlist();
 
     const filteredProducts = useMemo(() => {
         return products.filter(product => {
             if (selectedCategory && product.category !== selectedCategory) return false;
             if (selectedLight && product.light !== selectedLight) return false;
+            if (searchQuery && !product.name.toLowerCase().includes(searchQuery.toLowerCase()) &&
+                !product.scientificName.toLowerCase().includes(searchQuery.toLowerCase())) return false;
             return true;
         });
-    }, [selectedCategory, selectedLight]);
+    }, [selectedCategory, selectedLight, searchQuery]);
 
     const categories = ['indoor', 'outdoor', 'succulent'];
     const lightLevels = ['low', 'medium', 'bright'];
@@ -41,6 +48,19 @@ export const Shop: React.FC = () => {
                     <div className="filter-header-mobile">
                         <h3>Filters</h3>
                         <button onClick={() => setIsFilterOpen(false)}><X size={20} /></button>
+                    </div>
+
+                    <div className="filter-group search-group">
+                        <div className="search-input-wrapper">
+                            <Search size={18} className="search-icon" />
+                            <input
+                                type="text"
+                                placeholder="Search plants..."
+                                value={searchQuery}
+                                onChange={(e) => setSearchQuery(e.target.value)}
+                                className="search-input"
+                            />
+                        </div>
                     </div>
 
                     <div className="filter-group">
@@ -108,7 +128,15 @@ export const Shop: React.FC = () => {
                                 <Link to={`/product/${product.id}`} key={product.id} className="product-card">
                                     <div className="product-image-wrapper">
                                         <img src={product.image} alt={product.name} className="product-image" />
-                                        <button className="wishlist-btn" onClick={(e) => e.preventDefault()}><Star size={18} /></button>
+                                        <button
+                                            className={`wishlist-btn ${isInWishlist(product.id) ? 'active' : ''}`}
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                toggleWishlist(product.id);
+                                            }}
+                                        >
+                                            <Star size={18} fill={isInWishlist(product.id) ? "currentColor" : "none"} />
+                                        </button>
                                     </div>
                                     <div className="product-info">
                                         <p className="product-scientific">{product.scientificName}</p>
@@ -128,7 +156,11 @@ export const Shop: React.FC = () => {
                             <p>No plants found matching your criteria.</p>
                             <Button
                                 variant="outline"
-                                onClick={() => { setSelectedCategory(null); setSelectedLight(null); }}
+                                onClick={() => {
+                                    setSelectedCategory(null);
+                                    setSelectedLight(null);
+                                    setSearchQuery('');
+                                }}
                             >
                                 Clear Filters
                             </Button>

@@ -15,3 +15,7 @@
 - [x] **Phase 4: Polish** <!-- id: 12 -->
     - [x] Images & Assets <!-- id: 13 -->
     - [x] Responsive Check <!-- id: 14 -->
+- [x] **Phase 5: Additional Features** <!-- id: 15 -->
+    - [x] Care Guide Page <!-- id: 16 -->
+    - [x] Wishlist Functionality <!-- id: 17 -->
+    - [x] Search Functionality <!-- id: 18 -->
