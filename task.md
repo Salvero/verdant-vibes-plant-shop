@@ -1,0 +1,17 @@
+# Task List: Verdant Vibes Plant Shop
+
+- [x] **Phase 1: Setup & Foundation** <!-- id: 0 -->
+    - [x] Initialize Vite project (React + TS) <!-- id: 1 -->
+    - [x] Setup Project Structure <!-- id: 2 -->
+    - [x] Configure Global Styles & CSS Variables <!-- id: 3 -->
+- [x] **Phase 2: Core Components** <!-- id: 4 -->
+    - [x] Navbar & Footer <!-- id: 5 -->
+    - [x] UI Elements (Buttons, Cards) <!-- id: 6 -->
+- [x] **Phase 3: Pages & Features** <!-- id: 7 -->
+    - [x] Home Page (Hero, Featured) <!-- id: 8 -->
+    - [x] Shop Page (Catalog, Filters) <!-- id: 9 -->
+    - [x] Product Details Page <!-- id: 10 -->
+    - [x] Cart Functionality <!-- id: 11 -->
+- [x] **Phase 4: Polish** <!-- id: 12 -->
+    - [x] Images & Assets <!-- id: 13 -->
+    - [x] Responsive Check <!-- id: 14 -->
