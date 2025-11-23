@@ -10,3 +10,13 @@ export interface Product {
     difficulty: 'easy' | 'medium' | 'expert';
     description: string;
 }
+
+export interface Review {
+    id: string;
+    productId: string;
+    userName: string;
+    rating: number;
+    date: string;
+    comment: string;
+    verifiedPurchase: boolean;
+}

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { products } from '../data/products';
 import { Button } from '../components/Button';
+import { Reviews } from '../components/Reviews';
 import { useCart } from '../context/CartContext';
 import { ArrowLeft, Minus, Plus, Sun, Droplets, ShieldCheck } from 'lucide-react';
 
@@ -87,6 +88,8 @@ export const ProductDetails: React.FC = () => {
                     </div>
                 </div>
             </div>
+
+            <Reviews productId={product.id} />
         </div>
     );
 };

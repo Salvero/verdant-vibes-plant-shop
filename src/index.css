@@ -1315,3 +1315,148 @@ a {
 .faq-item p {
   color: var(--color-text-muted);
 }
+
+/* Product Reviews Styles */
+.reviews-section {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid var(--color-border);
+}
+
+.reviews-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.reviews-title {
+  font-size: 2rem;
+  margin-bottom: 0;
+}
+
+.reviews-summary {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.summary-rating {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.big-rating {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  line-height: 1;
+}
+
+.summary-stars {
+  display: flex;
+  gap: 4px;
+  margin: 0.5rem 0;
+}
+
+.review-count {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.no-reviews {
+  text-align: right;
+}
+
+.no-reviews p {
+  color: var(--color-text-muted);
+  margin-bottom: 1rem;
+}
+
+.reviews-list {
+  display: grid;
+  gap: 2rem;
+}
+
+.review-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.review-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.reviewer-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.reviewer-avatar {
+  width: 40px;
+  height: 40px;
+  background-color: var(--color-background);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-muted);
+}
+
+.reviewer-name {
+  display: block;
+  font-weight: 600;
+  color: var(--color-text);
+  margin-bottom: 0.25rem;
+}
+
+.verified-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.75rem;
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.review-date {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+}
+
+.review-rating {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 1rem;
+}
+
+.review-comment {
+  color: var(--color-text);
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .reviews-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .reviews-summary {
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .summary-rating {
+    align-items: flex-start;
+  }
+}

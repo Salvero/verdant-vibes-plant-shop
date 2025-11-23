@@ -33,10 +33,19 @@ Our design philosophy centers on "Modern Organic" aesthetics—blending the raw 
 ### 🌱 Detailed Product Pages
 - **High-Quality Images**: Beautiful plant photography
 - **Care Guides**: Visual indicators for light, water, and difficulty level
+- **Product Reviews**: Customer ratings and reviews with verified purchase badges
 - **Quantity Selection**: Easy-to-use quantity controls
 - **Add to Cart**: Seamless shopping experience
 
 ![Product Details](screenshots/product-details.png)
+
+### ⭐ Product Reviews
+- **Customer Feedback**: Real user reviews and ratings
+- **Star Ratings**: Visual 5-star rating system
+- **Verified Badges**: Trust signals for verified purchases
+- **Review Summary**: Aggregate rating and total review count
+
+![Product Reviews](screenshots/product-reviews.png)
 
 ### 🛒 Shopping Cart
 - **Slide-out Drawer**: Smooth cart animation
@@ -149,6 +158,7 @@ growhaus-plants/
 │   │   └── WishlistContext.tsx
 │   ├── data/           # Mock data
 │   │   ├── products.ts
+│   │   ├── reviews.ts
 │   ├── types/          # TypeScript type definitions
 │   │   ├── index.ts
 │   ├── App.tsx         # Main app component
@@ -202,7 +212,7 @@ growhaus-plants/
 - [x] ~~Accessibility improvements~~ ✅ Completed
 - [x] ~~Security headers~~ ✅ Completed
 - [ ] User authentication
-- [ ] Product reviews and ratings
+- [x] ~~Product reviews and ratings~~ ✅ Completed
 - [ ] Checkout and payment integration
 - [ ] Admin dashboard for inventory management
 - [ ] More plant varieties and categories
