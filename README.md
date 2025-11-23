@@ -14,6 +14,7 @@ Our design philosophy centers on "Modern Organic" aesthetics—blending the raw 
 
 ### 🏠 Beautiful Home Page
 - **Hero Section**: Eye-catching hero with compelling call-to-action
+- **Social Proof**: Trust-building metrics (4.9/5 stars) and customer benefits (Free Shipping Over $99)
 - **Featured Products**: Showcase of trending plants
 - **Value Propositions**: Highlighting sustainability, secure shipping, and expert support
 - **Newsletter Signup**: Build your green community
@@ -22,6 +23,7 @@ Our design philosophy centers on "Modern Organic" aesthetics—blending the raw 
 
 ### 🛍️ Smart Shop Page
 - **Product Catalog**: Clean grid layout with all available plants
+- **Search Functionality**: Quick access via search icon in navbar
 - **Advanced Filtering**: Filter by category (Indoor, Outdoor, Succulent) and light requirements (Low, Medium, Bright)
 - **Responsive Design**: Mobile-friendly filter drawer
 - **Real-time Results**: Instant product filtering
@@ -42,9 +44,33 @@ Our design philosophy centers on "Modern Organic" aesthetics—blending the raw 
 - **Live Totals**: Real-time price calculations
 - **Local Storage**: Cart persists across sessions
 
+### 📱 Mobile Navigation
+- **Hamburger Menu**: Touch-friendly mobile menu button
+- **Slide-out Drawer**: Smooth animation from the right
+- **Full Navigation**: Access to all pages (Home, Shop, Care)
+- **Overlay Backdrop**: Click outside to close
+- **Body Scroll Lock**: Prevents background scrolling when menu is open
+
+### ♿ Accessibility (WCAG 2.1 AA Compliant)
+- **Keyboard Navigation**: Full keyboard support with Tab navigation
+- **Focus States**: Visible 3px focus outlines on all interactive elements
+- **ARIA Attributes**: Comprehensive labels, roles, and states
+- **Screen Reader Support**: Descriptive labels and live regions
+- **High Contrast**: All text exceeds WCAG AAA contrast ratios (10.8:1 to 16.1:1)
+- **Focus Management**: Proper tab order and focus trap in mobile menu
+
+### 🔒 Security Headers (Production)
+- **HSTS**: Enforces HTTPS for 1 year with preload
+- **Content Security Policy**: Mitigates XSS attacks with strict resource policies
+- **X-Content-Type-Options**: Prevents MIME sniffing attacks
+- **X-Frame-Options**: Prevents clickjacking
+- **Referrer-Policy**: Controls referrer information for privacy
+- **Permissions-Policy**: Disables unnecessary browser features
+
 ## 🎨 Design Philosophy
 
 - **Modern Organic**: Blending contemporary web design with natural aesthetics
+- **Beautiful Leaf Logo**: Elegant monstera deliciosa design with natural fenestrations
 - **Color Palette**: 
   - Primary: Deep Forest Green (#2D4A3E)
   - Secondary: Sage Green (#8FBC8F)
@@ -54,6 +80,7 @@ Our design philosophy centers on "Modern Organic" aesthetics—blending the raw 
   - Headings: Playfair Display (serif)
   - Body: Inter (sans-serif)
 - **Micro-interactions**: Smooth hover effects and animations throughout
+- **Social Proof**: Trust signals and value propositions in hero section
 
 ## 🛠️ Tech Stack
 
@@ -64,6 +91,8 @@ Our design philosophy centers on "Modern Organic" aesthetics—blending the raw 
 - **Styling**: Vanilla CSS with CSS Variables
 - **Icons**: Lucide React
 - **Version Control**: Git & GitHub
+- **Deployment**: Netlify with security headers
+- **Accessibility**: WCAG 2.1 AA compliant
 
 ## 🚀 Getting Started
 
@@ -75,8 +104,8 @@ Our design philosophy centers on "Modern Organic" aesthetics—blending the raw 
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/Salvero/verdant-vibes-plant-shop.git
-cd verdant-vibes-plant-shop
+git clone https://github.com/Salvero/growhaus-plants.git
+cd growhaus-plants
 ```
 
 2. Install dependencies:
@@ -102,8 +131,8 @@ The production-ready files will be in the `dist` folder.
 ## 📁 Project Structure
 
 ```
-verdant-vibes-plant-shop/
-├── public/              # Static assets (images)
+growhaus-plants/
+├── public/              # Static assets (images, logo, favicon)
 ├── src/
 │   ├── components/      # Reusable UI components
 │   │   ├── Button.tsx
@@ -117,6 +146,7 @@ verdant-vibes-plant-shop/
 │   │   ├── ProductDetails.tsx
 │   ├── context/        # React Context providers
 │   │   ├── CartContext.tsx
+│   │   └── WishlistContext.tsx
 │   ├── data/           # Mock data
 │   │   ├── products.ts
 │   ├── types/          # TypeScript type definitions
@@ -124,7 +154,11 @@ verdant-vibes-plant-shop/
 │   ├── App.tsx         # Main app component
 │   ├── main.tsx        # Entry point
 │   └── index.css       # Global styles
+├── ACCESSIBILITY_REPORT.md  # Accessibility documentation
+├── SECURITY_HEADERS.md      # Security implementation guide
+├── SOCIAL_PROOF_IMPLEMENTATION.md  # Social proof documentation
 ├── package.json
+├── netlify.toml        # Netlify deployment config with security headers
 └── vite.config.ts
 ```
 
@@ -145,16 +179,35 @@ verdant-vibes-plant-shop/
 - Mobile-first approach
 - Breakpoints at 768px and 992px
 - Touch-friendly interactions
+- Mobile navigation menu with slide-out drawer
+
+### Accessibility
+- WCAG 2.1 Level AA compliant
+- Keyboard navigation support
+- Screen reader optimized
+- High contrast ratios (10.8:1 to 16.1:1)
+- Focus management and ARIA attributes
+
+### Security
+- HTTP security headers (HSTS, CSP, X-Content-Type-Options)
+- OWASP Top 10 aligned
+- PCI DSS and GDPR considerations
+- Netlify deployment with security configuration
 
 ## 🎯 Future Enhancements
 
+- [x] ~~Search functionality~~ ✅ Completed
+- [x] ~~Wishlist functionality~~ ✅ Completed
+- [x] ~~Mobile navigation menu~~ ✅ Completed
+- [x] ~~Accessibility improvements~~ ✅ Completed
+- [x] ~~Security headers~~ ✅ Completed
 - [ ] User authentication
-- [ ] Wishlist functionality
 - [ ] Product reviews and ratings
-- [ ] Search functionality
 - [ ] Checkout and payment integration
 - [ ] Admin dashboard for inventory management
 - [ ] More plant varieties and categories
+- [ ] CSP tightening (remove unsafe-inline)
+- [ ] Web Application Firewall (WAF)
 
 ## 👨‍💻 Author
 
