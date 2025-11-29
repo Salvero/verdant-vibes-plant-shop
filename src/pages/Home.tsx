@@ -277,18 +277,18 @@ export const Home: React.FC = () => {
                         >
                             <div className="social-proof-item">
                                 <div className="star-rating">
-                                    <Star size={20} fill="currentColor" />
-                                    <Star size={20} fill="currentColor" />
-                                    <Star size={20} fill="currentColor" />
-                                    <Star size={20} fill="currentColor" />
-                                    <Star size={20} fill="currentColor" />
+                                    <Star size={16} fill="currentColor" />
+                                    <Star size={16} fill="currentColor" />
+                                    <Star size={16} fill="currentColor" />
+                                    <Star size={16} fill="currentColor" />
+                                    <Star size={16} fill="currentColor" />
                                 </div>
                                 <span className="rating-text">4.9/5 Stars</span>
                             </div>
                             <span className="social-proof-divider">•</span>
                             <div className="social-proof-item">
                                 <span className="benefit-text">
-                                    <Truck size={20} className="trust-icon" />
+                                    <Truck size={16} className="trust-icon" />
                                     Free Shipping $99+
                                 </span>
                             </div>
