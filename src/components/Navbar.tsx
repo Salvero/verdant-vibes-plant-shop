@@ -26,13 +26,13 @@ export const Navbar: React.FC = () => {
     return (
         <>
             <nav className="navbar" role="navigation" aria-label="Main navigation">
-                <div className="container navbar-container">
+                <div className="navbar-container">
                     <Link
                         to="/"
                         className="navbar-logo"
                         aria-label="Growhaus - Go to homepage"
                     >
-                        <img src="/logo.png" alt="" className="navbar-logo-icon" aria-hidden="true" />
+                        <img src="/logo.svg" alt="" className="navbar-logo-icon" aria-hidden="true" />
                         Growhaus
                     </Link>
 
