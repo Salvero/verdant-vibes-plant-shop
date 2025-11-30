@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ArrowRight, Star, Truck, Leaf, Package, Heart, Users, TrendingUp, Clock, Sparkles, ChevronRight, ShoppingCart } from 'lucide-react';
 import { motion, useInView } from 'framer-motion';
 import { Button } from '../components/Button';
@@ -10,6 +10,11 @@ import { useCart } from '../context/CartContext';
 export const Home: React.FC = () => {
     const { isInWishlist, toggleWishlist } = useWishlist();
     const { addToCart } = useCart();
+
+    // Scroll to top when component mounts
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     // Animation variants for orchestrated entrance
     const titleWords = ["Bring", "Nature", "Indoors"];
@@ -484,7 +489,7 @@ export const Home: React.FC = () => {
                         {/* Card 2: Top Right - Pet Safe */}
                         <div className="category-card">
                             <img
-                                src="https://images.unsplash.com/photo-1463320726281-696a485928c7"
+                                src="https://images.unsplash.com/photo-1591958911259-bee2173bdccc?w=800&h=600&fit=crop"
                                 alt="Pet Safe Plants"
                                 className="category-image"
                                 loading="lazy"
@@ -498,7 +503,7 @@ export const Home: React.FC = () => {
                         {/* Card 3: Small - Beginner */}
                         <div className="category-card">
                             <img
-                                src="https://images.unsplash.com/photo-1459156212016-c812468e2115"
+                                src="https://images.unsplash.com/photo-1597305877032-0668b3c6413a"
                                 alt="Beginner Friendly"
                                 className="category-image"
                                 loading="lazy"
@@ -512,7 +517,7 @@ export const Home: React.FC = () => {
                         {/* Card 4: Small - Rare Finds */}
                         <div className="category-card">
                             <img
-                                src="https://images.unsplash.com/photo-1558603668-6570496b66f8"
+                                src="https://images.unsplash.com/photo-1614594975525-e45190c55d0b"
                                 alt="Rare Finds"
                                 className="category-image"
                                 loading="lazy"
@@ -526,13 +531,13 @@ export const Home: React.FC = () => {
                         {/* Card 5: Small - Statement Trees */}
                         <div className="category-card">
                             <img
-                                src="https://images.unsplash.com/photo-1497250681960-ef046c08a56e"
+                                src="https://images.unsplash.com/photo-1463936575829-25148e1db1b8?w=800&h=600&fit=crop"
                                 alt="Statement Trees"
                                 className="category-image"
                                 loading="lazy"
                             />
                             <div className="category-overlay">
-                                <h3 className="category-name">Statement Trees</h3>
+                                <h3 className="category-name">Big Trees</h3>
                                 <p className="category-count">24 plants</p>
                             </div>
                         </div>

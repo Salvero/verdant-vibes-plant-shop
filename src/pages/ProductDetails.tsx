@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { products } from '../data/products';
 import { Button } from '../components/Button';
@@ -11,8 +11,14 @@ export const ProductDetails: React.FC = () => {
     const navigate = useNavigate();
     const { addToCart } = useCart();
     const [quantity, setQuantity] = useState(1);
+    const [activeImage, setActiveImage] = useState(0);
 
     const product = products.find(p => p.id === id);
+
+    // Scroll to top when component mounts or product changes
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [id]);
 
     if (!product) {
         return (
@@ -29,6 +35,16 @@ export const ProductDetails: React.FC = () => {
         }
     };
 
+    // Thumbnail images with different views/angles
+    const images = [
+        product.image, // Main angle (original product image)
+        `https://images.unsplash.com/photo-1545241047-6083a3684587?w=400&h=400&fit=crop`, // Close-up of leaves
+        `https://images.unsplash.com/photo-1614594895304-fe7116ac3b58?w=400&h=400&fit=crop`, // Full plant with pot - side angle
+        `https://images.unsplash.com/photo-1509937528035-ad76254b0356?w=400&h=400&fit=crop`, // Plant in room context (fixed)
+        `https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?w=400&h=400&fit=crop`, // Detail shot - potted succulent
+        `https://images.unsplash.com/photo-1459156212016-c812468e2115?w=400&h=400&fit=crop`, // Plant from top angle
+    ];
+
     return (
         <div className="product-details-page container">
             <button className="back-btn" onClick={() => navigate(-1)}>
@@ -37,7 +53,25 @@ export const ProductDetails: React.FC = () => {
 
             <div className="product-details-grid">
                 <div className="product-gallery">
-                    <img src={product.image} alt={product.name} className="main-image" />
+                    <div className="main-image-wrapper">
+                        <img
+                            src={images[activeImage]}
+                            alt={product.name}
+                            className="main-image"
+                        />
+                    </div>
+                    <div className="thumbnail-row">
+                        {images.map((img, index) => (
+                            <button
+                                key={index}
+                                className={`thumbnail ${index === activeImage ? 'active' : ''}`}
+                                onClick={() => setActiveImage(index)}
+                                aria-label={`View ${index + 1}`}
+                            >
+                                <img src={img} alt={`View ${index + 1}`} />
+                            </button>
+                        ))}
+                    </div>
                 </div>
 
                 <div className="product-info-section">

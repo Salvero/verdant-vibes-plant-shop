@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { products } from '../data/products';
 import { Button } from '../components/Button';
 import { Star, Filter, X, Search } from 'lucide-react';
@@ -13,6 +13,11 @@ export const Shop: React.FC = () => {
     const [isFilterOpen, setIsFilterOpen] = useState(false);
 
     const { isInWishlist, toggleWishlist } = useWishlist();
+
+    // Scroll to top when component mounts
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const filteredProducts = useMemo(() => {
         return products.filter(product => {

@@ -1,7 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Sun, Droplets, Thermometer, Scissors, Bug, Sprout } from 'lucide-react';
 
 export const Care: React.FC = () => {
+    // Scroll to top when component mounts
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
     const careTips = [
         {
             icon: <Sun size={32} />,
